@@ -94,7 +94,7 @@ function savePoster() {
   if (!duplicate) {
       savedPosters.push(currentPoster);
       console.log(currentPoster.imageURL);
-      var newPoster = `<article class="poster">
+      var newPoster = `${savedPosterLocation.innerHTML} <article class="poster">
           <img class="poster-img" src="${currentPoster.imageURL}" alt="nothin' to see here">
           <h1 class="poster-title">${currentPoster.title}</h1>
           <h3 class="poster-quote">${currentPoster.quote}</h3>
