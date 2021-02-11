@@ -2,6 +2,7 @@
 var posterImage = document.querySelector('.poster-img');
 var posterTitle = document.querySelector('.poster-title');
 var posterQuote = document.querySelector('.poster-quote');
+var savedPosterLocation = document.querySelector('.saved-posters-grid');
 
 var userPosterImage = document.querySelector('#poster-image-url');
 var userPosterTitle = document.querySelector('#poster-title');
@@ -56,10 +57,14 @@ function generateRandomPoster() {
 }
 
 function createRandomPoster() {
-  var randomPoster = generateRandomPoster();
-  posterImage.src = randomPoster.imageURL;
-  posterTitle.innerHTML = randomPoster.title;
-  posterQuote.innerHTML = randomPoster.quote;
+  // var randomPoster = generateRandomPoster();
+  // posterImage.src = randomPoster.imageURL;
+  // posterTitle.innerHTML = randomPoster.title;
+  // posterQuote.innerHTML = randomPoster.quote;
+  currentPoster = generateRandomPoster();
+  posterImage.src = currentPoster.imageURL;
+  posterTitle.innerHTML = currentPoster.title;
+  posterQuote.innerHTML = currentPoster.quote;
 }
 
 function switchScreens(closingWindow, openingWindow){
@@ -88,5 +93,13 @@ function savePoster() {
   }
   if (!duplicate) {
       savedPosters.push(currentPoster);
+      console.log(currentPoster.imageURL);
+      var newPoster = `<article class="poster">
+          <img class="poster-img" src="${currentPoster.imageURL}" alt="nothin' to see here">
+          <h1 class="poster-title">${currentPoster.title}</h1>
+          <h3 class="poster-quote">${currentPoster.quote}</h3>
+        </article>`;
+        console.log(savedPosterLocation);
+        savedPosterLocation.innerHTML = newPoster;
   }
 }
