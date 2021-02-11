@@ -20,7 +20,6 @@ showRandomButton.addEventListener('click', createRandomPoster);
 makePoster.addEventListener('click', function(event) {
   userInput();
   switchScreens('.main-poster', '.poster-form');
-  // Save the submitted data into the respective arrays 
   event.preventDefault();
 });
 
@@ -66,8 +65,11 @@ function switchScreens(closingWindow, openingWindow){
 
 function userInput() {
   var newPoster = new Poster(userPosterImage.value, userPosterTitle.value, userPosterQuote.value);
-
   posterImage.src = newPoster.imageURL;
   posterTitle.innerHTML = newPoster.title;
   posterQuote.innerHTML = newPoster.quote;
+  images.push(newPoster.imageURL);
+  titles.push(newPoster.title);
+  quotes.push(newPoster.quote);
+  savedPosters.push(newPoster);
 }
