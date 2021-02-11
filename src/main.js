@@ -17,17 +17,12 @@ var currentPoster;
 // event listeners go here 👇
 window.addEventListener('load', createRandomPoster);
 showRandomButton.addEventListener('click', createRandomPoster);
-makePoster.addEventListener('click', function() {
-  var newPoster = new Poster(userPosterImage.value, 
-  userPosterTitle.value, userPosterQuote.value);
-
-  posterImage.src = newPoster.imageURL;
-  posterTitle.innerHTML = newPoster.title;
-  posterQuote.innerHTML = newPoster.quote;
+makePoster.addEventListener('click', function(event) {
+  userInput();
   switchScreens('.main-poster', '.poster-form');
   // Save the submitted data into the respective arrays 
-  // event.preventDefault();
-}, false);
+  event.preventDefault();
+});
 
 showFormButton.addEventListener('click', function(){
   switchScreens(".main-poster",".poster-form");
@@ -67,4 +62,12 @@ function switchScreens(closingWindow, openingWindow){
   closing.classList.toggle("hidden");
   var opening = document.querySelector(openingWindow);
   opening.classList.toggle("hidden");
+}
+
+function userInput() {
+  var newPoster = new Poster(userPosterImage.value, userPosterTitle.value, userPosterQuote.value);
+
+  posterImage.src = newPoster.imageURL;
+  posterTitle.innerHTML = newPoster.title;
+  posterQuote.innerHTML = newPoster.quote;
 }
