@@ -3,18 +3,26 @@ var posterImage = document.querySelector('.poster-img');
 var posterTitle = document.querySelector('.poster-title');
 var posterQuote = document.querySelector('.poster-quote');
 var showRandomButton = document.querySelector('.show-random');
+var userPosterImage = document.querySelector('#poster-image-url');
+var userPosterTitle = document.querySelector('#poster-title');
+var userPosterQuote = document.querySelector('#poster-quote');
+var makePoster = document.querySelector('.make-poster');
 var showFormButton = document.querySelector('.show-form');
 var showSavedPostersButton = document.querySelector('.show-saved');
 var backToMainButton = document.querySelector('.back-to-main');
 var takeMeBackButton = document.querySelector('.show-main');
-
-
 var savedPosters = [];
 var currentPoster;
 
 // event listeners go here 👇
 window.addEventListener('load', createRandomPoster);
 showRandomButton.addEventListener('click', createRandomPoster);
+makePoster.addEventListener('click', function(event) {
+  userInput();
+  switchScreens('.main-poster', '.poster-form');
+  event.preventDefault();
+});
+
 showFormButton.addEventListener('click', function(){
   switchScreens(".main-poster",".poster-form");
 }, false);
@@ -53,4 +61,15 @@ function switchScreens(closingWindow, openingWindow){
   closing.classList.toggle("hidden");
   var opening = document.querySelector(openingWindow);
   opening.classList.toggle("hidden");
+}
+
+function userInput() {
+  var newPoster = new Poster(userPosterImage.value, userPosterTitle.value, userPosterQuote.value);
+  posterImage.src = newPoster.imageURL;
+  posterTitle.innerHTML = newPoster.title;
+  posterQuote.innerHTML = newPoster.quote;
+  images.push(newPoster.imageURL);
+  titles.push(newPoster.title);
+  quotes.push(newPoster.quote);
+  savedPosters.push(newPoster);
 }
