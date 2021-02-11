@@ -11,24 +11,24 @@ var showFormButton = document.querySelector('.show-form');
 var showSavedPostersButton = document.querySelector('.show-saved');
 var backToMainButton = document.querySelector('.back-to-main');
 var takeMeBackButton = document.querySelector('.show-main');
-
-
 var savedPosters = [];
 var currentPoster;
 
 // event listeners go here 👇
 window.addEventListener('load', createRandomPoster);
 showRandomButton.addEventListener('click', createRandomPoster);
-makePoster.addEventListener('click', function(event) {
+makePoster.addEventListener('click', function() {
   var newPoster = new Poster(userPosterImage.value, 
-  userPosterTitle.value, userPosterQuote.value)
-  // Fire off hide/unhide function when button is clicked
+  userPosterTitle.value, userPosterQuote.value);
+
   posterImage.src = newPoster.imageURL;
   posterTitle.innerHTML = newPoster.title;
   posterQuote.innerHTML = newPoster.quote;
+  switchScreens('.main-poster', '.poster-form');
   // Save the submitted data into the respective arrays 
-  event.preventDefault();
-})
+  // event.preventDefault();
+}, false);
+
 showFormButton.addEventListener('click', function(){
   switchScreens(".main-poster",".poster-form");
 }, false);
