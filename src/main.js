@@ -57,10 +57,6 @@ function generateRandomPoster() {
 }
 
 function createRandomPoster() {
-  // var randomPoster = generateRandomPoster();
-  // posterImage.src = randomPoster.imageURL;
-  // posterTitle.innerHTML = randomPoster.title;
-  // posterQuote.innerHTML = randomPoster.quote;
   currentPoster = generateRandomPoster();
   posterImage.src = currentPoster.imageURL;
   posterTitle.innerHTML = currentPoster.title;
@@ -85,21 +81,23 @@ function userInput() {
 }
 
 function savePoster() {
-  var duplicate = false;
-  for (var i= 0; i < savedPosters.length; i++) {
-    if (savedPosters[i] === currentPoster) {
-      duplicate = true;
-    }
-  }
+  var duplicate = checkDuplicate();
   if (!duplicate) {
       savedPosters.push(currentPoster);
-      console.log(currentPoster.imageURL);
       var newPoster = `${savedPosterLocation.innerHTML} <article class="poster">
           <img class="poster-img" src="${currentPoster.imageURL}" alt="nothin' to see here">
           <h1 class="poster-title">${currentPoster.title}</h1>
           <h3 class="poster-quote">${currentPoster.quote}</h3>
         </article>`;
-        console.log(savedPosterLocation);
         savedPosterLocation.innerHTML = newPoster;
   }
+}
+
+function checkDuplicate () {
+  for (var i= 0; i < savedPosters.length; i++) {
+    if (savedPosters[i] === currentPoster) {
+      return duplicate = true;
+    }
+  }
+  return false;
 }
