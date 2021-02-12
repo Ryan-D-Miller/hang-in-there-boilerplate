@@ -3,6 +3,7 @@ var posterImage = document.querySelector('.poster-img');
 var posterTitle = document.querySelector('.poster-title');
 var posterQuote = document.querySelector('.poster-quote');
 var savedPosterLocation = document.querySelector('.saved-posters-grid');
+var savedPosterContainer = document.querySelectorAll('#poster-container');
 
 var userPosterImage = document.querySelector('#poster-image-url');
 var userPosterTitle = document.querySelector('#poster-title');
@@ -42,6 +43,8 @@ takeMeBackButton.addEventListener('click', function(){
 }, false);
 
 savePosterButton.addEventListener('click', savePoster);
+
+// document.addEventListener('dblclick',)
 
 // functions and event handlers go here 👇
 function getRandomIndex(array) {
@@ -84,12 +87,13 @@ function savePoster() {
   var duplicate = checkDuplicate();
   if (!duplicate) {
       savedPosters.push(currentPoster);
-      var newPoster = `${savedPosterLocation.innerHTML} <article class="poster">
+      var newPoster = `${savedPosterLocation.innerHTML} <article class="poster" id="poster-container">
           <img class="poster-img" src="${currentPoster.imageURL}" alt="nothin' to see here">
           <h1 class="poster-title">${currentPoster.title}</h1>
           <h3 class="poster-quote">${currentPoster.quote}</h3>
         </article>`;
         savedPosterLocation.innerHTML = newPoster;
+        savedPosterContainer = documemt.querySelectorAll('#poster-container');
   }
 }
 
