@@ -43,6 +43,12 @@ takeMeBackButton.addEventListener('click', function(){
 
 savePosterButton.addEventListener('click', savePoster);
 
+document.addEventListener('click', function(e){
+  if(e.target && e.target.parentElement.classList.contains("saved-poster")){
+    removePoster(e.target);
+  }
+})
+
 // functions and event handlers go here 👇
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
@@ -84,7 +90,7 @@ function savePoster() {
   var duplicate = checkDuplicate();
   if (!duplicate) {
       savedPosters.push(currentPoster);
-      var newPoster = `${savedPosterLocation.innerHTML} <article class="poster">
+      var newPoster = `${savedPosterLocation.innerHTML} <article class="poster saved-poster" id=${savedPosters.length -1}>
           <img class="poster-img" src="${currentPoster.imageURL}" alt="nothin' to see here">
           <h1 class="poster-title">${currentPoster.title}</h1>
           <h3 class="poster-quote">${currentPoster.quote}</h3>
@@ -100,4 +106,11 @@ function checkDuplicate () {
     }
   }
   return false;
+}
+
+function removePoster(target){
+  console.log(savedPosters);
+  savedPosters.splice(target.parentElement.id, 1);
+  target.parentElement.parentElement.removeChild(target.parentElement);
+  console.log(savedPosters);
 }
