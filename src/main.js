@@ -3,6 +3,9 @@ var posterImage = document.querySelector('.poster-img');
 var posterTitle = document.querySelector('.poster-title');
 var posterQuote = document.querySelector('.poster-quote');
 var savedPosterLocation = document.querySelector('.saved-posters-grid');
+var imageError = document.querySelector('.img-error');
+var titleError = document.querySelector('.title-error');
+var quoteError = document.querySelector('.quote-error');
 
 var userPosterImage = document.querySelector('#poster-image-url');
 var userPosterTitle = document.querySelector('#poster-title');
@@ -112,3 +115,7 @@ function removePoster(target){
   savedPosters.splice(target.id, 1);
   target.remove();
 }
+
+// function showError(data) {
+//   if (data === )
+// }
