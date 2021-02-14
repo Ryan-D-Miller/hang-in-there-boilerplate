@@ -28,6 +28,7 @@ showRandomButton.addEventListener('click', createRandomPoster);
 makePoster.addEventListener('click', function(event) {
   userInput();
   switchScreens('.main-poster', '.poster-form');
+  clearForm();
   event.preventDefault();
 });
 
@@ -117,5 +118,23 @@ function removePoster(target){
 }
 
 // function showError(data) {
-//   if (data === )
+//   if (data === "") {
+//     visualShow([imageError]);
+//   } else if (data === "") {
+//     visualShow([titleError]);
+//   } else if (data === "") {
+//     visualShow ([quoteError]);
+//   }
 // }
+
+// function visualShow(elements) {
+//   for (var i = 0; i < elements.length; i++) {
+//     elements[i].classList.remove('visibility-hidden');
+//   }
+// }
+
+function clearForm() {
+  userPosterImage.value = "";
+  userPosterTitle.value = "";
+  userPosterQuote.value = "";  
+}
