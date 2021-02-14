@@ -110,5 +110,5 @@ function checkDuplicate () {
 
 function removePoster(target){
   savedPosters.splice(target.id, 1);
-  target.parentElement.removeChild(target);
+  target.remove();
 }
