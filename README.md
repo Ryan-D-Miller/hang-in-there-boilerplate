@@ -13,7 +13,7 @@ Users have the ability to randomly generate, create and save posters.
 * To return to the main page, without completing form, click the **Nevermind, take Mel back!** button. 
 * Save newly created posters or randomly populated ones by selecting the **Save This Poster** button. 
 * Click **Show Saved Posters** button to view all of saved posters. 
-* Double click, anywhere on a poster, to **remove any saved posters** on the screen.  
+* Double click, anywhere on a poster, to **remove any saved poster** on the screen.  
 ![hangInThere3](./readme-imgs/hangInThere3.png)
 
 ## GitHub Pages
