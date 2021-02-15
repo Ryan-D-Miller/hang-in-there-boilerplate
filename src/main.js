@@ -29,24 +29,21 @@ makePoster.addEventListener('click', function(event) {
   userInput();
   event.preventDefault();
 });
-
-showFormButton.addEventListener('click', function(){
+showFormButton.addEventListener('click', function() {
   switchScreens(".main-poster",".poster-form");
 }, false);
-showSavedPostersButton.addEventListener('click', function(){
+showSavedPostersButton.addEventListener('click', function() {
   switchScreens(".main-poster",".saved-posters");
 }, false);
-backToMainButton.addEventListener('click', function(){
+backToMainButton.addEventListener('click', function() {
   switchScreens(".saved-posters",".main-poster");
 }, false);
-takeMeBackButton.addEventListener('click', function(){
+takeMeBackButton.addEventListener('click', function() {
   switchScreens(".poster-form",".main-poster");
 }, false);
-
 savePosterButton.addEventListener('click', savePoster);
-
-document.addEventListener('dblclick', function(e){
-  if(e.target && e.target.parentElement.classList.contains("saved-poster")){
+document.addEventListener('dblclick', function(e) {
+  if (e.target && e.target.parentElement.classList.contains("saved-poster")) {
     removePoster(e.target.parentElement);
   }
 })
@@ -71,7 +68,7 @@ function createRandomPoster() {
   posterQuote.innerHTML = currentPoster.quote;
 }
 
-function switchScreens(closingWindow, openingWindow){
+function switchScreens(closingWindow, openingWindow) {
   var closing = document.querySelector(closingWindow);
   closing.classList.toggle("hidden");
   var opening = document.querySelector(openingWindow);
@@ -80,7 +77,7 @@ function switchScreens(closingWindow, openingWindow){
 
 function userInput() {
   currentPoster = new Poster(userPosterImage.value, userPosterTitle.value, userPosterQuote.value);
-  var error = errorMessages()
+  var error = errorMessages();
   if (!error) {
     posterImage.src = currentPoster.imageURL;
     posterTitle.innerHTML = currentPoster.title;
@@ -115,6 +112,26 @@ function checkUserEntry(userEntry, errorMsg) {
   }
 }
 
+function showError(element) {
+  element.classList.remove('visibility-hidden');
+}
+
+function removeError(element) {
+  element.classList.add('visibility-hidden');
+}
+
+function removeAllErrors() {
+  removeError(imageError);
+  removeError(titleError);
+  removeError(quoteError);
+}
+
+function clearForm() {
+  userPosterImage.value = "";
+  userPosterTitle.value = "";
+  userPosterQuote.value = "";  
+}
+
 function savePoster() {
   var duplicate = checkDuplicate();
   if (!duplicate) {
@@ -140,24 +157,4 @@ function checkDuplicate () {
 function removePoster(target) {
   savedPosters.splice(target.id, 1);
   target.remove();
-}
-
-function showError(element) {
-  element.classList.remove('visibility-hidden');
-}
-
-function removeError(element) {
-  element.classList.add('visibility-hidden');
-}
-
-function removeAllErrors() {
-  removeError(imageError);
-  removeError(titleError);
-  removeError(quoteError);
-}
-
-function clearForm() {
-  userPosterImage.value = "";
-  userPosterTitle.value = "";
-  userPosterQuote.value = "";  
 }
