@@ -87,22 +87,34 @@ function userInput() {
 }
 
 function errorMessages() {
-  var imageMsg = checkUserEntry(userPosterImage.value, imageError);
+  var imageMsg = checkIfImage(userPosterImage.value, imageError);
   var titleMsg = checkUserEntry(userPosterTitle.value, titleError);
   var quoteMsg = checkUserEntry(userPosterQuote.value, quoteError);
-  if (imageMsg || titleMsg || quoteMsg) {
+  if (!imageMsg ||titleMsg || quoteMsg) {
     return true;
   } else {
-    return false; 
+    return false;
   }
 }
 
+function checkIfImage(url, errorMsg) {
+  if(url.match(/\.(jpeg|jpg|gif|png)$/) != null){
+    removeError(errorMsg);
+    return true;
+  }
+  else{
+    showError(errorMsg);
+    return false;
+  }
+}
+
+
 function checkUserEntry(userEntry, errorMsg) {
   if (userEntry === "") {
-    showError(errorMsg);  
+    showError(errorMsg);
     return true;
   } else {
-    removeError(errorMsg); 
+    removeError(errorMsg);
     return false;
   }
 }
@@ -124,7 +136,7 @@ function removeAllErrors() {
 function clearForm() {
   userPosterImage.value = "";
   userPosterTitle.value = "";
-  userPosterQuote.value = "";  
+  userPosterQuote.value = "";
 }
 
 function savePoster() {
