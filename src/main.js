@@ -27,8 +27,6 @@ window.addEventListener('load', createRandomPoster);
 showRandomButton.addEventListener('click', createRandomPoster);
 makePoster.addEventListener('click', function(event) {
   userInput();
-  // switchScreens('.main-poster', '.poster-form');
-  // clearForm();
   event.preventDefault();
 });
 
@@ -92,23 +90,27 @@ function userInput() {
     quotes.push(currentPoster.quote);
     switchScreens('.main-poster', '.poster-form');
     clearForm();
-    removeError(imageError);
-    removeError(titleError);
-    removeError(quoteError);
+    removeAllErrors();
   }
 }
 
 function errorMessages() {
-  if (userPosterImage.value === "") {
-    showError(imageError);
-    return error = true; 
-  } else if (userPosterTitle.value === "") {
-    showError(titleError);
-    return error = true;
-  } else if (userPosterQuote.value === "") {
-    showError(quoteError);
-    return error = true;
+  var imageMsg = checkUserEntry(userPosterImage.value, imageError);
+  var titleMsg = checkUserEntry(userPosterTitle.value, titleError);
+  var quoteMsg = checkUserEntry(userPosterQuote.value, quoteError);
+  if (imageMsg || titleMsg || quoteMsg) {
+    return true;
   } else {
+    return false; 
+  }
+}
+
+function checkUserEntry(userEntry, errorMsg) {
+  if (userEntry === "") {
+    showError(errorMsg);  
+    return true;
+  } else {
+    removeError(errorMsg); 
     return false;
   }
 }
@@ -135,7 +137,7 @@ function checkDuplicate () {
   return false;
 }
 
-function removePoster(target){
+function removePoster(target) {
   savedPosters.splice(target.id, 1);
   target.remove();
 }
@@ -146,6 +148,12 @@ function showError(element) {
 
 function removeError(element) {
   element.classList.add('visibility-hidden');
+}
+
+function removeAllErrors() {
+  removeError(imageError);
+  removeError(titleError);
+  removeError(quoteError);
 }
 
 function clearForm() {
