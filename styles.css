@@ -67,6 +67,7 @@ button:hover {
   font-weight: normal;
   letter-spacing: 20px;
   margin-bottom: 10px;
+  padding-top: 30px;
   text-transform: uppercase;
 }
 
@@ -101,7 +102,6 @@ button:hover {
 
 .poster-form .divider {
   border-bottom: 1px solid black;
-  /* margin: auto; */
   margin-bottom: 0;
   width: 400px;
 }
