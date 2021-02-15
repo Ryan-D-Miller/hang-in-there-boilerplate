@@ -13,5 +13,6 @@ The user has the ability to save their unique posters and randomly generated pos
 ![hangInThere3](./readme-imgs/hangInThere3.png)
 
 ## Authors
-Ryan Miller [@Ryan-D-Miller](https://github.com/Ryan-D-Miller) 
+Ryan Miller [@Ryan-D-Miller](https://github.com/Ryan-D-Miller)
+
 Melanie Daoheuang [@daomeow](https://github.com/daomeow) 
