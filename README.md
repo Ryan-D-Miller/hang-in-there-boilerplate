@@ -9,7 +9,7 @@ Users have the ability to randomly generate, create and save posters.
 * Generate additional random posters with the **Show Another Random Poster** button. 
 * The **Make Your Own Poster** button will pull up a form to create a poster from scratch. 
 
-* **Please Note:** An image url, title and quote **all have to be entered** before the **Show my poster** button will work. ![hangInThere2](./readme-imgs/hangInThere2.png)
+  * **Please Note:** An image url, title and quote **all have to be entered** before the **Show my poster** button will work. ![hangInThere2](./readme-imgs/hangInThere2.png)
 * To return to the main page, without completing form, click the **Nevermind, take Mel back!** button. 
 * Save newly created posters or randomly populated ones by selecting the **Save This Poster** button. 
 * Click **Show Saved Posters** button to view all of saved posters. 
