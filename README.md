@@ -6,7 +6,7 @@ Users have the ability to randomly generate, create and save posters.
 ## Description
 
 * The main page will randomly populate a new poster (image, title and quote) every time the website is loaded. 
-* Generate additional random posters by clicking the **Show Another Random Poster** button. 
+* Generate additional random posters with the **Show Another Random Poster** button. 
 * The **Make Your Own Poster** button will pull up a form to create a poster from scratch. 
 
 * **Please Note:** An image url, title and quote **all have to be entered** before the **Show my poster** button will work. ![hangInThere2](./readme-imgs/hangInThere2.png)
