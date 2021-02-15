@@ -95,7 +95,7 @@ function errorMessages() {
   var imageMsg = checkIfImage(userPosterImage.value, imageError);
   var titleMsg = checkUserEntry(userPosterTitle.value, titleError);
   var quoteMsg = checkUserEntry(userPosterQuote.value, quoteError);
-  if (!imageMsg || titleMsg || quoteMsg) {
+  if (!imageMsg ||titleMsg || quoteMsg) {
     return true;
   } else {
     return false;
