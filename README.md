@@ -10,6 +10,7 @@ Users have the ability to randomly generate, create and save posters.
 * The **Make Your Own Poster** button pulls up a form to create a poster from scratch.
 
 * **Please Note:** An image url, title and quote **all have to be entered** before the **Show my poster** button will work.
+
 * The image urls must end in an image extension (i.e .jpg) 
 ![hangInThere2](./readme-imgs/hangInThere2.png)
 * To return to the main page, without completing form, click the **Nevermind, take Mel back!** button.
