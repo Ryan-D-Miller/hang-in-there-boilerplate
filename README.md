@@ -1,6 +1,6 @@
 # Hang In There 
 
-Users have the ability to randomly generate, create and save/view posters. 
+Users have the ability to randomly generate, create and save posters. 
 ![hangInThere1](./readme-imgs/hangInThere1.png)
   
 ## Description
