@@ -51,8 +51,7 @@ button:hover {
 .poster-img {
   background-size: cover;
   border: 2px solid white;
-  height: 450px;
-  width: 800px;
+  max-width: 80%;
 }
 
 .poster-title,
@@ -94,7 +93,6 @@ button:hover {
 
 .poster-form input {
   display: block;
-  margin-bottom: 20px;
   width: 100%;
 }
 
@@ -103,6 +101,15 @@ button:hover {
   margin: auto;
   margin-bottom: 20px;
   width: 400px;
+}
+
+.img-error,
+.title-error,
+.quote-error {
+  font-size: 1.2em;
+  font-weight: 900;
+  color: red;
+  margin-bottom: 10px;
 }
 
 /* ~~~~~ SAVED POSTER SECTION ~~~~~ */
@@ -144,4 +151,8 @@ button:hover {
   letter-spacing: 5px;
   margin-bottom: 10px;
   text-transform: uppercase;
+}
+
+.visibility-hidden {
+  visibility: hidden;
 }

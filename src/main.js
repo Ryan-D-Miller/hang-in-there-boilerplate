@@ -3,6 +3,9 @@ var posterImage = document.querySelector('.poster-img');
 var posterTitle = document.querySelector('.poster-title');
 var posterQuote = document.querySelector('.poster-quote');
 var savedPosterLocation = document.querySelector('.saved-posters-grid');
+var imageError = document.querySelector('.img-error');
+var titleError = document.querySelector('.title-error');
+var quoteError = document.querySelector('.quote-error');
 
 var userPosterImage = document.querySelector('#poster-image-url');
 var userPosterTitle = document.querySelector('#poster-title');
@@ -24,27 +27,23 @@ window.addEventListener('load', createRandomPoster);
 showRandomButton.addEventListener('click', createRandomPoster);
 makePoster.addEventListener('click', function(event) {
   userInput();
-  switchScreens('.main-poster', '.poster-form');
   event.preventDefault();
 });
-
-showFormButton.addEventListener('click', function(){
+showFormButton.addEventListener('click', function() {
   switchScreens(".main-poster",".poster-form");
 }, false);
-showSavedPostersButton.addEventListener('click', function(){
+showSavedPostersButton.addEventListener('click', function() {
   switchScreens(".main-poster",".saved-posters");
 }, false);
-backToMainButton.addEventListener('click', function(){
+backToMainButton.addEventListener('click', function() {
   switchScreens(".saved-posters",".main-poster");
 }, false);
-takeMeBackButton.addEventListener('click', function(){
+takeMeBackButton.addEventListener('click', function() {
   switchScreens(".poster-form",".main-poster");
 }, false);
-
 savePosterButton.addEventListener('click', savePoster);
-
-document.addEventListener('dblclick', function(e){
-  if(e.target && e.target.parentElement.classList.contains("saved-poster")){
+document.addEventListener('dblclick', function(e) {
+  if (e.target && e.target.parentElement.classList.contains("saved-poster")) {
     removePoster(e.target.parentElement);
   }
 })
@@ -69,7 +68,7 @@ function createRandomPoster() {
   posterQuote.innerHTML = currentPoster.quote;
 }
 
-function switchScreens(closingWindow, openingWindow){
+function switchScreens(closingWindow, openingWindow) {
   var closing = document.querySelector(closingWindow);
   closing.classList.toggle("hidden");
   var opening = document.querySelector(openingWindow);
@@ -78,12 +77,59 @@ function switchScreens(closingWindow, openingWindow){
 
 function userInput() {
   currentPoster = new Poster(userPosterImage.value, userPosterTitle.value, userPosterQuote.value);
-  posterImage.src = currentPoster.imageURL;
-  posterTitle.innerHTML = currentPoster.title;
-  posterQuote.innerHTML = currentPoster.quote;
-  images.push(currentPoster.imageURL);
-  titles.push(currentPoster.title);
-  quotes.push(currentPoster.quote);
+  var error = errorMessages();
+  if (!error) {
+    posterImage.src = currentPoster.imageURL;
+    posterTitle.innerHTML = currentPoster.title;
+    posterQuote.innerHTML = currentPoster.quote;
+    images.push(currentPoster.imageURL);
+    titles.push(currentPoster.title);
+    quotes.push(currentPoster.quote);
+    switchScreens('.main-poster', '.poster-form');
+    clearForm();
+    removeAllErrors();
+  }
+}
+
+function errorMessages() {
+  var imageMsg = checkUserEntry(userPosterImage.value, imageError);
+  var titleMsg = checkUserEntry(userPosterTitle.value, titleError);
+  var quoteMsg = checkUserEntry(userPosterQuote.value, quoteError);
+  if (imageMsg || titleMsg || quoteMsg) {
+    return true;
+  } else {
+    return false; 
+  }
+}
+
+function checkUserEntry(userEntry, errorMsg) {
+  if (userEntry === "") {
+    showError(errorMsg);  
+    return true;
+  } else {
+    removeError(errorMsg); 
+    return false;
+  }
+}
+
+function showError(element) {
+  element.classList.remove('visibility-hidden');
+}
+
+function removeError(element) {
+  element.classList.add('visibility-hidden');
+}
+
+function removeAllErrors() {
+  removeError(imageError);
+  removeError(titleError);
+  removeError(quoteError);
+}
+
+function clearForm() {
+  userPosterImage.value = "";
+  userPosterTitle.value = "";
+  userPosterQuote.value = "";  
 }
 
 function savePoster() {
@@ -108,7 +154,7 @@ function checkDuplicate () {
   return false;
 }
 
-function removePoster(target){
+function removePoster(target) {
   savedPosters.splice(target.id, 1);
   target.remove();
 }
