@@ -4,6 +4,7 @@
 *:after {
   box-sizing: border-box;
   font-family: "EB Garamond", serif;
+  font-weight: 900;
   margin: auto;
   text-align: center;
 }
@@ -62,7 +63,7 @@ button:hover {
 }
 
 .poster-title {
-  font-size: 60px;
+  font-size: 1.5em;
   font-weight: normal;
   letter-spacing: 20px;
   margin-bottom: 10px;
@@ -81,13 +82,15 @@ button:hover {
 }
 
 .poster-form h2 {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+  font-size: 2.3em;
 }
 
 .poster-form form {
   align-content: center;
   display: flex;
   flex-direction: column;
+  margin-bottom: 0;
   width: 40%;
 }
 
@@ -98,8 +101,8 @@ button:hover {
 
 .poster-form .divider {
   border-bottom: 1px solid black;
-  margin: auto;
-  margin-bottom: 20px;
+  /* margin: auto; */
+  margin-bottom: 0;
   width: 400px;
 }
 
