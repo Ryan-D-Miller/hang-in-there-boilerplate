@@ -9,7 +9,8 @@ Users have the ability to randomly generate, create and save posters.
 * Generate additional random posters by clicking the **Show Another Random Poster** button.
 * The **Make Your Own Poster** button pulls up a form to create a poster from scratch.
 
-  * Please Note:** An image url, title and quote **all have to be entered** before the **Show my poster** button will work.
+  * **Please Note:** 
+  * An image url, title and quote **all have to be entered** before the **Show my poster** button will work.
   * The image urls must end in an image extension (i.e .jpg) 
   
 ![hangInThere2](./readme-imgs/hangInThere2.png)
