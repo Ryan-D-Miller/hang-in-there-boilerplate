@@ -27,8 +27,8 @@ window.addEventListener('load', createRandomPoster);
 showRandomButton.addEventListener('click', createRandomPoster);
 makePoster.addEventListener('click', function(event) {
   userInput();
-  switchScreens('.main-poster', '.poster-form');
-  clearForm();
+  // switchScreens('.main-poster', '.poster-form');
+  // clearForm();
   event.preventDefault();
 });
 
@@ -82,12 +82,35 @@ function switchScreens(closingWindow, openingWindow){
 
 function userInput() {
   currentPoster = new Poster(userPosterImage.value, userPosterTitle.value, userPosterQuote.value);
-  posterImage.src = currentPoster.imageURL;
-  posterTitle.innerHTML = currentPoster.title;
-  posterQuote.innerHTML = currentPoster.quote;
-  images.push(currentPoster.imageURL);
-  titles.push(currentPoster.title);
-  quotes.push(currentPoster.quote);
+  var error = errorMessages()
+  if (!error) {
+    posterImage.src = currentPoster.imageURL;
+    posterTitle.innerHTML = currentPoster.title;
+    posterQuote.innerHTML = currentPoster.quote;
+    images.push(currentPoster.imageURL);
+    titles.push(currentPoster.title);
+    quotes.push(currentPoster.quote);
+    switchScreens('.main-poster', '.poster-form');
+    clearForm();
+    removeError(imageError);
+    removeError(titleError);
+    removeError(quoteError);
+  }
+}
+
+function errorMessages() {
+  if (userPosterImage.value === "") {
+    showError(imageError);
+    return error = true; 
+  } else if (userPosterTitle.value === "") {
+    showError(titleError);
+    return error = true;
+  } else if (userPosterQuote.value === "") {
+    showError(quoteError);
+    return error = true;
+  } else {
+    return false;
+  }
 }
 
 function savePoster() {
@@ -117,21 +140,13 @@ function removePoster(target){
   target.remove();
 }
 
-// function showError(data) {
-//   if (data === "") {
-//     visualShow([imageError]);
-//   } else if (data === "") {
-//     visualShow([titleError]);
-//   } else if (data === "") {
-//     visualShow ([quoteError]);
-//   }
-// }
+function showError(element) {
+  element.classList.remove('visibility-hidden');
+}
 
-// function visualShow(elements) {
-//   for (var i = 0; i < elements.length; i++) {
-//     elements[i].classList.remove('visibility-hidden');
-//   }
-// }
+function removeError(element) {
+  element.classList.add('visibility-hidden');
+}
 
 function clearForm() {
   userPosterImage.value = "";
