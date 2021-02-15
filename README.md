@@ -20,8 +20,8 @@ Users have the ability to randomly generate, create and save posters.
 [Click here](https://ryan-d-miller.github.io/hang-in-there-boilerplate/) to launch GitHub Pages 
 
 ## Authors
-Ryan Miller [@Ryan-D-Miller](https://github.com/Ryan-D-Miller)
+**Ryan Miller** [@Ryan-D-Miller](https://github.com/Ryan-D-Miller)
 
-Melanie Daoheuang [@daomeow](https://github.com/daomeow) 
+**Melanie Daoheuang** [@daomeow](https://github.com/daomeow) 
 
 
