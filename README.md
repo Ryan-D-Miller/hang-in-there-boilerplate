@@ -11,7 +11,7 @@ Users have the ability to randomly generate, create and save posters.
 
 * **Please Note:** An image url, title and quote **all have to be entered** before the **Show my poster** button will work. ![hangInThere2](./readme-imgs/hangInThere2.png)
 * To return to the main page, without completing form, click the **Nevermind, take Mel back!** button. 
-* Save the newly created poster or a randomly populahted poster by selecting the **Save This Poster** button. 
+* Save the newly created poster or a randomly populated poster by selecting the **Save This Poster** button. 
 * **Show Saved Posters** will display all of saved posters. 
 * Double click, anywhere on a poster, to **remove any saved posters**.  
 ![hangInThere3](./readme-imgs/hangInThere3.png)
