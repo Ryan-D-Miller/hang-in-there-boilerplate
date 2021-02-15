@@ -16,3 +16,6 @@ The user has the ability to save their unique posters and randomly generated pos
 Ryan Miller [@Ryan-D-Miller](https://github.com/Ryan-D-Miller)
 
 Melanie Daoheuang [@daomeow](https://github.com/daomeow) 
+
+## GitHub Pages
+[Click here](https://ryan-d-miller.github.io/hang-in-there-boilerplate/) to launch GitHub Pages 
