@@ -5,11 +5,13 @@ Users have the ability to randomly generate, create and save posters.
   
 ## Description
 
-The main page will randomly generate a new poster (image, title and quote) every time the website is loaded. The user has the ability to randomly generate another poster by clicking the **Show Another Random Poster** button. 
-
-**Select the** **_Make Your Own Poster_** button to fill out a form to create a poster from scratch. An image url, title and quote **all have to be entered** before the **Show my poster** button will work. ![hangInThere2](./readme-imgs/hangInThere2.png)To return to the main page, without completely filling out the form, click the **Nevermind, take Mel back!** button. To save the newly created poster click the **Save This Poster** button. 
-
-The user has the ability to save their unique posters and randomly generated posters. **Show Saved Posters** will display all of the posters that have been saved. To removed saved posters double click anywhere on the poster to no longer have it included on this page.  
+* The main page will randomly generate a new poster (image, title and quote) every time the website is loaded. 
+* Generate random posters by clicking the **Show Another Random Poster** button. 
+* The **Make Your Own Poster** button pulls up a form to create a poster from scratch. An image url, title and quote **all have to be entered** before the **Show my poster** button will work. ![hangInThere2](./readme-imgs/hangInThere2.png)
+* To return to the main page, without completely filling out the form, click the **Nevermind, take Mel back!** button. 
+* Save the newly created poster or a randomly populated poster by selecting the **Save This Poster** button. 
+* **Show Saved Posters** will display all of the posters that have been saved. 
+* Double click, anywhere on the poster, to **remove any saved posters**.  
 ![hangInThere3](./readme-imgs/hangInThere3.png)
 
 ## GitHub Pages
