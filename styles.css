@@ -93,7 +93,6 @@ button:hover {
 
 .poster-form input {
   display: block;
-  margin-bottom: 20px;
   width: 100%;
 }
 
@@ -102,6 +101,15 @@ button:hover {
   margin: auto;
   margin-bottom: 20px;
   width: 400px;
+}
+
+.img-error,
+.title-error,
+.quote-error {
+  font-size: 1.2em;
+  font-weight: 900;
+  color: red;
+  margin-bottom: 10px;
 }
 
 /* ~~~~~ SAVED POSTER SECTION ~~~~~ */
